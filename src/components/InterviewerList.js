@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "components/DayListItem.scss";
-import "components/InterviewerListItem.scss"
-import "components/InterviewerListItem"
+import "components/InterviewerListItem.scss";
+import "components/InterviewerListItem";
 import InterviewerListItem from "components/InterviewerListItem";
 
 
@@ -14,7 +14,7 @@ export default function InterviewerList(props) {
       avatar={interviewer.avatar}
       selected={interviewer.id === props.value}
       setInterviewer={event => props.onChange(interviewer.id)}
-    />)
+    />);
   });
 
   
@@ -25,7 +25,7 @@ export default function InterviewerList(props) {
           {interviewers}
         </ul>
       </section>
-    )
+    );
   };
 
 InterviewerList.propTypes = {

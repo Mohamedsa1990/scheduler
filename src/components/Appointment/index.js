@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 import "components/Appointment/styles.scss";
-import Header from "components/Appointment/Header"
-import Show from "components/Appointment/Show"
-import Empty from "components/Appointment/Empty"
+import Header from "components/Appointment/Header";
+import Show from "components/Appointment/Show";
+import Empty from "components/Appointment/Empty";
 import useVisualMode from "../../hooks/useVisualMode";
-import Form from "components/Appointment/Form"
-import Status from "components/Appointment/Status"
-import Confirm from "components/Appointment/Confirm"
-import Error from "components/Appointment/Error"
+import Form from "components/Appointment/Form";
+import Status from "components/Appointment/Status";
+import Confirm from "components/Appointment/Confirm";
+import Error from "components/Appointment/Error";
 
 
 
@@ -35,8 +35,7 @@ export default function Appointment (props) {
     transition(SAVING);
     props.bookInterview(props.id,interview)
     .then(() => {transition(SHOW)})
-    .catch(() => {transition(ERROR_SAVE, true)})
-    ;
+    .catch(() => {transition(ERROR_SAVE, true)});
   };
 
   function deleteInterview() {
@@ -44,8 +43,8 @@ export default function Appointment (props) {
     transition(DELETEING);
     props.cancelInterview(props.id, interview)
     .then(() => {transition(EMPTY)})
-    .catch(() => {transition(ERROR_DELETE, true)})
-  }
+    .catch(() => {transition(ERROR_DELETE, true)});
+  };
   
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
@@ -55,7 +54,7 @@ export default function Appointment (props) {
 
 
   return (
-    <article className='appointment' data-testid="appointment">
+    <article className="appointment" data-testid="appointment">
       <Header
       time={props.time}
       />
@@ -113,4 +112,4 @@ export default function Appointment (props) {
         
     </article>
   );
-}
+};

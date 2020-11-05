@@ -63,7 +63,7 @@ export default {
         statusText : "OK",
         data: fixtures.days
       });
-    }
+    };
 
     if (url === "/api/appointments") {
       return Promise.resolve({
@@ -71,7 +71,7 @@ export default {
         statusText: "OK",
         data: fixtures.appointments
       });
-    }
+    };
 
     if (url === "/api/interviewers") {
       return Promise.resolve({
@@ -79,7 +79,7 @@ export default {
         statusText: "OK",
         data: fixtures.interviewers
       });
-    }
+    };
   }),
 
   put: jest.fn(() => {
@@ -94,4 +94,4 @@ export default {
       statusText: "No Content" 
     });
   })
-}
+};
